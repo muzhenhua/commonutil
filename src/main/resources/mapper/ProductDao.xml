@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lizhi.common.dao.ProductDao">
+	<resultMap id="product" type="com.lizhi.common.entity.Product">
+        <result property="id" column="id"/>
+        <result property="size" column="size"/>
+    </resultMap>
+
+<select id="selectProductById" resultMap="product">
+	select * from product where id =#{id}
+	<!--select * from product where id =#{id} for update -->
+</select>
+<update id="reduceNum" parameterType="com.lizhi.common.entity.Product" >
+	update product set size=size-#{nums} where id=#{id} 
+</update>
+</mapper> 

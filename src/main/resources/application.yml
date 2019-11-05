@@ -1,0 +1,23 @@
+server:
+  tomcat:
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8203
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  profiles:
+    active: dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  configLocation: classpath:mybatis.xml
+
+
+
+
+
+
